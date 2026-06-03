@@ -1370,10 +1370,12 @@ footer{
   background:var(--bg);
   backdrop-filter:blur(20px);
   display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:32px;
+  align-items:center;justify-content:flex-start;
+  padding:80px 24px;
+  gap:24px;
   transform:translateY(-100%);
   transition:transform 0.5s var(--ease-out-expo);
+  overflow-y:auto;
 }
 .mobile-nav.open{transform:translateY(0)}
 .mobile-nav a{
@@ -1395,15 +1397,15 @@ footer{
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
-═══════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
 @media(max-width:1024px){
   nav{padding:0 24px}
+  .nav-links,.nav-end .btn-ghost{display:none}
+  .burger{display:flex}
   .demo-wrap{gap:48px}
 }
 @media(max-width:900px){
   nav{padding:0 20px}
-  .nav-links,.nav-end .btn-ghost{display:none}
-  .burger{display:flex}
   section{padding:70px 20px}
   .hero{padding:100px 20px 70px}
   .hero-proof{

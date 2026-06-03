@@ -11,6 +11,9 @@
   filter:contrast(1.06) saturate(1.12) brightness(1.02);
   transform:translateZ(0);
 }
+@media(max-width:768px){
+  .hero-video{object-fit:cover}
+}
 .hero-video-overlay{
   position:absolute;inset:0;z-index:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(3,5,13,0.72) 0%,rgba(3,5,13,0.6) 45%,rgba(3,5,13,0.82) 100%);
@@ -75,6 +78,10 @@
   object-fit:contain;
   display:block;
 }
+@media(max-width:768px){
+  .img-ticker-card{height:60px}
+  .img-ticker-card img{height:60px}
+}
 
 /* ═══════════════════════════════════════════
    NEW CHAT DEMO
@@ -90,7 +97,7 @@
 .cd-phones-row{
   display:flex;gap:20px;align-items:flex-start;justify-content:center;
 }
-@media(max-width:600px){.cd-phones-row{flex-direction:column;align-items:center}}
+@media(max-width:768px){.cd-phones-row{flex-direction:column;align-items:center}}
 
 /* steps side */
 .cd-steps{display:flex;flex-direction:column;gap:0}
@@ -127,6 +134,7 @@
 /* phone */
 .cd-phone{
   width:310px;
+  max-width:100%;
   background:#0a0f0c;
   border-radius:40px;
   border:9px solid #161d18;
@@ -347,10 +355,10 @@ section.demo{background:rgba(0,20,8,0.35)}
 
 @keyframes scroll-left{
   0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
+  100%{transform:translateX(calc(-50% - 10px))}
 }
 @keyframes scroll-right{
-  0%{transform:translateX(-50%)}
+  0%{transform:translateX(calc(-50% - 10px))}
   100%{transform:translateX(0)}
 }
 
@@ -378,6 +386,20 @@ section.demo{background:rgba(0,20,8,0.35)}
 .testi-gtext{
   font-size:.85rem;color:var(--muted);
   line-height:1.75;margin:0;
+}
+@media(max-width:768px){
+  .testi-rows{gap:16px}
+  .testi-row-wrap{
+    overflow:hidden;
+    padding:10px 0;
+  }
+  .testi-row{
+    padding-bottom:4px;
+  }
+  .testi-gcard{
+    width:280px;
+    padding:18px;
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -468,9 +490,47 @@ section.demo{background:rgba(0,20,8,0.35)}
   display:flex;align-items:center;justify-content:center;
   font-size:.75rem;font-weight:900;
 }
-@media(max-width:700px){
-  .cmp-new-head,.cmp-new-row{grid-template-columns:1fr}
-  .cmp-new-h2,.cmp-new-h3,.cmp-new-yes,.cmp-new-no{border-right:none;border-top:1px solid var(--border)}
+@media(max-width:800px){
+  .cmp-new-head{display:none}
+  .cmp-new-row{
+    display:flex;flex-direction:column;
+    padding:18px 20px;
+    border-top:1px solid var(--border);
+  }
+  .cmp-new-row:first-child{border-top:none}
+  .cmp-new-feat{
+    border-right:none;padding:0 0 8px 0;
+    margin-bottom:6px;
+  }
+  .cmp-new-yes,.cmp-new-no{
+    border-right:none;border-top:none;
+    padding:6px 0;background:transparent;
+    display:flex;align-items:flex-start;gap:10px;
+  }
+  .cmp-new-yes::before{
+    content:"Zosata: ";
+    font-size:.65rem;font-weight:800;
+    text-transform:uppercase;
+    color:var(--green);
+    opacity:0.8;
+    margin-right:8px;
+    min-width:90px;
+    display:inline-block;
+    margin-top:4px;
+    flex-shrink:0;
+  }
+  .cmp-new-no::before{
+    content:"Aggregators: ";
+    font-size:.65rem;font-weight:800;
+    text-transform:uppercase;
+    color:#F87171;
+    opacity:0.8;
+    margin-right:8px;
+    min-width:90px;
+    display:inline-block;
+    margin-top:4px;
+    flex-shrink:0;
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -483,7 +543,7 @@ section.demo{background:rgba(0,20,8,0.35)}
   margin-top:52px;
 }
 @media(max-width:1024px){.why-cards-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.why-cards-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.why-cards-grid{grid-template-columns:1fr}}
 
 .why-img-card{
   background:var(--card);
@@ -533,7 +593,7 @@ section.demo{background:rgba(0,20,8,0.35)}
   margin-top:52px;
 }
 @media(max-width:1024px){.how-cards-new{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.how-cards-new{grid-template-columns:1fr}}
+@media(max-width:768px){.how-cards-new{grid-template-columns:1fr}}
 
 .how-card-new{
   background:var(--card-bg);
@@ -712,7 +772,10 @@ footer{background:#0a1410 !important;border-top-color:rgba(0,230,118,0.12) !impo
 .cta-band h2{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,3vw,2.2rem)}
 .cta-band p{color:var(--muted);margin:10px 0 20px}
 @keyframes spin{to{transform:rotate(1turn)}}
-@media(max-width:900px){ .grid{grid-template-columns:1fr} }
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .cta-band{padding:30px 20px;margin:20px 0 40px;border-radius:18px}
+}
 
 /* ═══════════════════════════════════════════
    LEGAL (privacy / terms)

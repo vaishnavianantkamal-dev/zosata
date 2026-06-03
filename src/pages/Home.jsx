@@ -214,7 +214,7 @@ export default function Home() {
         </div>
         <h1>
           Turn WhatsApp Into Your<br />
-          <span className="word-outline">Restaurant's</span>&nbsp;<span className="word-green">Revenue Engine</span>
+          <span className="word-outline">Restaurant's</span> <span className="word-green">Revenue Engine</span>
         </h1>
         <p className="hero-desc">Customers browse your menu, reply with a number, and order — all inside WhatsApp. No app download. No aggregator cut. Payment hits your bank directly.</p>
         <div className="hero-btns">
